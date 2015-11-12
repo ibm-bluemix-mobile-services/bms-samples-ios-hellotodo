@@ -21,7 +21,11 @@
     self.itemList = [[NSMutableArray alloc]init];
     IMFClient *imfClient = [IMFClient sharedInstance];
     _backendRoute =[NSString stringWithFormat:@"%@",imfClient.backendRoute];
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.tableView addSubview:self.refreshControl];
+    [self.refreshControl addTarget:self action:@selector(handleRefreshAction) forControlEvents:UIControlEventValueChanged];
     [self listItems];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -235,6 +239,10 @@
         return [item1.text caseInsensitiveCompare:item2.text];
     }];
     [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+}
+-(void) handleRefreshAction{
+    [self listItems];
+    [self.refreshControl endRefreshing];
 }
 
 
