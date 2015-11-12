@@ -48,7 +48,7 @@ return YES;
 
 ### Run the iOS App
 
-When you run the application you will see a single view application with a list of todo items. If you previously added data through your web application you will see the data automatically pulled into the application. You can create, add, modify and delete todo items directly in the application. You can also mark items as compelted by clicking to the left of the corresponding todo item. 
+When you run the application you will see a single view application with a list of todo items. If you previously added data through your web application you will see the data automatically pulled into the application. You can create, add, modify and delete todo items directly in the application. You can also mark items as compelted by clicking to the left of the corresponding todo item. When you make a change in the mobile app it will automatically be updated in the web app. If you make a change in the web app and want to see it reflected in the mobile app, simply pull down the todo list to complete a refresh.
 
 Note: This application has been built to run on the latest version of XCode (7.0). The application has been updated to set Enable Bitcode to No in the build-settings as a workaround for the these settings introduced in iOS 9. For more info please see the following blog:
 
