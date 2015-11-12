@@ -88,3 +88,5 @@ helloTodo/Pods/Target Support Files/Pods/Pods-resources.sh
 helloTodo/Pods/Target Support Files/Pods/Pods.debug.xcconfig
 
 helloTodo/Pods/Target Support Files/Pods/Pods.release.xcconfig
+
+helloTodo/helloTodo.xcworkspace/contents.xcworkspacedata
