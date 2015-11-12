@@ -12,8 +12,10 @@ Before you can run the helloTodo application, you must set up an app on Bluemix.
 1. Sign up for a [Bluemix](http://bluemix.net) Account.
 2. Create a mobile app.  In the Boilerplates section Bluemix catalog, click **MobileFirst Services Starter**.  Choose a **Name** and click **Create**.
 3. Get Familiar with StrongLoop Web App: The Bluemix Mobile Services Boilerplate has provided a web app built with StrongLoop that lets you build and modify data directly through the browser.
+
 -Check out the web interface by going to your application in a browser: 
     Example: http://<APP_Name>.mybluemix.net
+
 -Rest APIs have already been provided that can be viewed and used through a browser:
     Example: http://<App_Name>.mybluemix.net/explorer/#!/Item
 
