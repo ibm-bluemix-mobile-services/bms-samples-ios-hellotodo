@@ -14,10 +14,12 @@ Before you can run the helloTodo application, you must set up an app on Bluemix.
 3. Get Familiar with StrongLoop Web App: The Bluemix Mobile Services Boilerplate has provided a web app built with StrongLoop that lets you build and modify data directly through the browser.
 
 -Check out the web interface by going to your application in a browser: 
-    Example: http://<APP_Name>.mybluemix.net
+    
+Example: http://{APP_Name}.mybluemix.net
 
 -Rest APIs have already been provided that can be viewed and used through a browser:
-    Example: http://<App_Name>.mybluemix.net/explorer/#!/Item
+    
+Example: http://{App_Name}.mybluemix.net/explorer/#!/Item
 
 ### Configure the front end in the helloTodo sample
 1. In a terminal, navigate to the bms-samples-ios-hellotodo directory where the project was cloned
