@@ -16,11 +16,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //initialize SDK with IBM Bluemix application ID and route
-    //TODO: Please Enter a valid ApplicationRoute for initializaWithBackendRoute and a valid ApplicationId for backenGUID
-    //Example:
-    //IMFClient *imfClient = [IMFClient sharedInstance];
-    //[imfClient initializeWithBackendRoute:@"<APPLICATION_ROUTE>" backendGUID:@"<APPLICATION_ID>"];
+	
+	// Replace the backendRoute and backendGUID parameters in the initialization API below
+
+	// You can find your backendRoute and backendGUID in the Mobile Options section on top of your
+	// Bluemix application dashboard
+	
+	// Make sure to use https protocol if you're targeting iOS9, otherwise you might not be able to connect to your backend app
+	// Read more about App Transport Security here
+	// https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html
+	
+    IMFClient *imfClient = [IMFClient sharedInstance];
+    [imfClient initializeWithBackendRoute:@"<APPLICATION_ROUTE>" backendGUID:@"<APPLICATION_ID>"];
 
     return YES;
 }
