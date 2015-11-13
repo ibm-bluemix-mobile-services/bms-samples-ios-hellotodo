@@ -30,7 +30,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)listItems
@@ -63,9 +62,14 @@
 {
     NSString *restAPIURL = [NSString stringWithFormat:@"%@/api/Items",_backendRoute];
     IMFResourceRequest* request = [IMFResourceRequest requestWithPath:restAPIURL];
-    NSString *jsonBody = [NSString stringWithFormat:@"{\"text\": \"%@\",\"isDone\": false,\"id\": 0}",itemText];
-    NSData *data = [jsonBody dataUsingEncoding:NSUTF8StringEncoding];
-    [request setHTTPMethod:@"POST"];
+	
+	NSDictionary *jsonDict = [NSDictionary dictionaryWithObjectsAndKeys:
+							  itemText, @"text",
+							  @"false", @"isDone", nil];
+	
+	NSData *data = [NSJSONSerialization dataWithJSONObject:jsonDict options:NSJSONWritingPrettyPrinted error:nil];
+	
+	[request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:data];
     [request sendWithCompletionHandler:^(IMFResponse *response, NSError *error) {
@@ -85,9 +89,15 @@
 {
     NSString *restAPIURL = [NSString stringWithFormat:@"%@/api/Items",_backendRoute];
     IMFResourceRequest* request = [IMFResourceRequest requestWithPath:restAPIURL];
-    NSString *jsonBody = [NSString stringWithFormat:@"{\"text\": \"%@\",\"isDone\": %@,\"id\": %@}",item.text,item.isDone ? @"true":@"false",item.idNumber];
-    NSData *data = [jsonBody dataUsingEncoding:NSUTF8StringEncoding];
-    [request setHTTPMethod:@"PUT"];
+	
+	NSDictionary *jsonDict = [NSDictionary dictionaryWithObjectsAndKeys:
+							  item.text, @"text",
+							  item.isDone ? @"true" : @"false", @"isDone",
+							  item.idNumber, @"id", nil];
+	
+	NSData *data = [NSJSONSerialization dataWithJSONObject:jsonDict options:NSJSONWritingPrettyPrinted error:nil];
+
+	[request setHTTPMethod:@"PUT"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:data];
     [request sendWithCompletionHandler:^(IMFResponse *response, NSError *error) {
@@ -107,22 +117,17 @@
 {
     NSString *restAPIURL = [NSString stringWithFormat:@"%@/api/Items/%@",_backendRoute,item.idNumber];
     IMFResourceRequest* request = [IMFResourceRequest requestWithPath:restAPIURL];
-    NSDictionary *param =  @{@"OK":@"OK"};
     [request setHTTPMethod:@"DELETE"];
-    [request setParameters:param];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request sendWithCompletionHandler:^(IMFResponse *response, NSError *error) {
         if (error != nil) {
             NSLog(@"deleteItem failed with error: %@",error);
         }
         else {
             NSLog(@"Item  deleted successfully");
-            [self listItems];
         }
+		[self listItems];
     }];
 }
-
-
 
 #pragma mark - Table view data source
 
@@ -156,9 +161,6 @@
                 cell.accessoryType =UITableViewCellAccessoryCheckmark;
             }
             else{
-               // NSDictionary* attributes = none;
-                //NSAttributedString* stringWithAttributes = [[NSAttributedString alloc] initWithString:item.text attributes:attributes];
-                //((UITextField*)view).attributedText =stringWithAttributes;
                 ((UITextField*)view).text = item.text;
                 cell.accessoryType = UITableViewCellAccessoryNone;
             }
