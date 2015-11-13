@@ -1,6 +1,6 @@
-# HelloTodo application for IBM MobileFirst Services on IBM Bluemix
+# HelloTodo sample for IBM MobileFirst Services on IBM Bluemix
 ---
-The HelloTodo sample contains an Objective-C project to be used to communicate with a StrongLoop based backend created as when using the MobileFirst Services Boilerplate on Bluemix. 
+The HelloTodo sample contains an Objective-C project to be used to communicate with a StrongLoop based backend created when using the MobileFirst Services Boilerplate on IBM Bluemix. 
 
 ### Creating a mobile backend
 Start by creating a mobile backend on IBM Bluemix by using the MobileFirst Services Boilerplate
