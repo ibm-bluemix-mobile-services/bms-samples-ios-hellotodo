@@ -161,7 +161,10 @@
                 cell.accessoryType =UITableViewCellAccessoryCheckmark;
             }
             else{
-                ((UITextField*)view).text = item.text;
+                
+                NSDictionary* attributes = @{};
+                NSAttributedString* stringWithAttributes = [[NSAttributedString alloc] initWithString:item.text attributes:attributes];
+                ((UITextField*)view).attributedText =stringWithAttributes;
                 cell.accessoryType = UITableViewCellAccessoryNone;
             }
         }
