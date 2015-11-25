@@ -6,6 +6,9 @@ This HelloTodo sample contains an Objective-C project to be used to communicate 
 > We're working on creating a video tutorial. It will be published here once ready
 
 ### Creating a mobile backend
+
+> If you have already followed steps described in other tutorials and created a mobile backend using MobileFirst Services Boilerplate you might want to skip to `Cloning the sample` section
+
 Start by creating a mobile backend on IBM Bluemix by using the MobileFirst Services Boilerplate
 
 1. Log in into your IBM Bluemix account
