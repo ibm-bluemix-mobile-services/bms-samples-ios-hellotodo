@@ -1,14 +1,14 @@
-# iOS helloTodo sample for IBM MobileFirst Services on IBM Bluemix
+# iOS helloTodo Sample Application for Bluemix Mobile Services
 ---
 This helloTodo sample contains an Objective-C project to be used to communicate with a StrongLoop based mobile backend created using MobileFirst Services Boilerplate on IBM Bluemix. You can either watch the video tutorial or follow the below instructions that take you step by step through a process of creating a mobile backend and getting this sample running.
 
 ![image](video-coming-soon.png)
 > We're working on creating a video tutorial. It will be published here once ready
 
-Sections covered to use the helloTodo sample for Objective-C:
+Use the following steps to configure the helloTodo sample for Objective-C:
 
 1. [Downloading the helloTodo sample](#downloading-the-hellotodo-sample)
-2. [Configuring the back end for your helloTodo application](#configuring-the-back-end-for-your-hellotodo-application)
+2. [Configuring the mobile backend for your helloTodo application](#configuring-the-mobile-backend-for-your-hellotodo-application)
 3. [Configuring the front end in the helloTodo sample](#configuring-the-front-end-in-the-hellotodo-sample)
 4. [Running the helloTodo sample application](#running-the-hellotodo-sample-application)
 
@@ -20,9 +20,9 @@ Before you start, make sure you have the following:
 ### Downloading the helloTodo sample
 Clone the sample from Github with the following command:
 
-git clone https://github.com/ibm-bluemix-mobile-services/bms-samples-ios-hellotodo
+```git clone https://github.com/ibm-bluemix-mobile-services/bms-samples-ios-hellotodo```
 
-### Configuring the back end for your helloTodo application
+### Configuring the mobile backend for your helloTodo application
 > If you have already followed steps described in other tutorials and created a mobile backend using MobileFirst Services Boilerplate you might want to skip to the [Configuring the front end in the helloTodo sample](#configuring-the-front-end-in-the-hellotodo-sample) section.
 
 Before you can run the helloTodo application, you must set up an app on Bluemix.  The following procedure shows you how to create a MobileFirst Services Starter application. This will provision a Node.JS runtime and populate it with with a default helloTodo application created using StrongLoop. This application uses LoopBack framework to expose the `/api/Items` API which will be used by both Web UI and the helloTodo app sample from this Github repository. . The Cloudant®NoSQL DB, IBM Push Notifications, and Mobile Client Access services are also added to the app.
@@ -40,10 +40,10 @@ Open the appRoute URL in your browser. You will see the web interface for the he
 (Optionally you might want to hit the "View API Reference" button on web UI to see the API specs)
 
 ### Configuring the front end in the helloTodo sample
-1. In a terminal, navigate to the **bms-samples-ios-hellotodo** directory where the project was cloned
+1. In a terminal, navigate to the `bms-samples-ios-hellotodo` directory where the project was cloned
 2. Navigate to the helloTodo folder
-3. If the Cocoapod client is not installed, install it using the following command: `sudo gem install cocoapods`
-4. If the Cocoapod repository is not configured, configure it using the following command: `pod setup`
+3. If the CocoaPods client is not installed, install it using the following command: `sudo gem install cocoapods`
+4. If the CocoaPods repository is not configured, configure it using the following command: `pod setup`
 5. Run the `pod install` command to download and install the required dependencies.
 6. Open the Xcode workspace: `open helloPush.xcworkspace`. From now on, open the xcworkspace file since it contains all the dependencies and configuration.
 7. Open the **AppDelegate.m** and add the corresponding **ApplicationRoute** and
@@ -74,7 +74,7 @@ As you recall the DELETE endpoint can only be accessed by mobile applications si
 > We're working on creating a video tutorial. It will be published here once ready
 
 
-**Note:** This helloTodo iOS sample requires XCode 7.1 to run. Also, the project has bitcode support disabled since currently the Bluemix Mobile Services SDK does not support it. You can read more about this in this blog [Connect Your iOS 9 App to Bluemix](https://developer.ibm.com/bluemix/2015/09/16/connect-your-ios-9-app-to-bluemix/)
+**Note:** This helloTodo iOS sample requires XCode 7.1 to run. Also, the project has bitcode support disabled since currently the Bluemix Mobile Services SDK does not support it. You can read more about this in this blog entry: [Connect Your iOS 9 App to Bluemix](https://developer.ibm.com/bluemix/2015/09/16/connect-your-ios-9-app-to-bluemix/)
 
 ### License
 This package contains sample code provided in source code form. The samples are licensed under the under the Apache License, Version 2.0 (the "License"). You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and may also view the license in the license.txt file within this package. Also see the notices.txt file within this package for additional notices.
