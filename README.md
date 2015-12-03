@@ -7,22 +7,22 @@ This helloTodo sample contains an Objective-C project to be used to communicate 
 
 Use the following steps to configure the helloTodo sample for Objective-C:
 
-1. [Downloading the helloTodo sample](#downloading-the-hellotodo-sample)
-2. [Configuring the mobile backend for your helloTodo application](#configuring-the-mobile-backend-for-your-hellotodo-application)
-3. [Configuring the front end in the helloTodo sample](#configuring-the-front-end-in-the-hellotodo-sample)
-4. [Running the helloTodo sample application](#running-the-hellotodo-sample-application)
+1. [Download the helloTodo sample](#download-the-hellotodo-sample)
+2. [Configure the mobile backend for your helloTodo application](#configure-the-mobile-backend-for-your-hellotodo-application)
+3. [Configure the front end in the helloTodo sample](#configure-the-front-end-in-the-hellotodo-sample)
+4. [Run the helloTodo sample application](#run-the-hellotodo-sample-application)
 
 ### Before you begin
 Before you start, make sure you have the following:
 
 - A [Bluemix](http://bluemix.net) account.
 
-### Downloading the helloTodo sample
+### Download the helloTodo sample
 Clone the sample from Github with the following command:
 
 ```git clone https://github.com/ibm-bluemix-mobile-services/bms-samples-ios-hellotodo```
 
-### Configuring the mobile backend for your helloTodo application
+### Configure the mobile backend for your helloTodo application
 > If you have already followed steps described in other tutorials and created a mobile backend using MobileFirst Services Boilerplate you might want to skip to the [Configuring the front end in the helloTodo sample](#configuring-the-front-end-in-the-hellotodo-sample) section.
 
 Before you can run the helloTodo application, you must set up an app on Bluemix.  The following procedure shows you how to create a MobileFirst Services Starter application. This will provision a Node.JS runtime and populate it with with a default helloTodo application created using StrongLoop. This application uses LoopBack framework to expose the `/api/Items` API which will be used by both Web UI and the helloTodo app sample from this Github repository. . The Cloudant®NoSQL DB, IBM Push Notifications, and Mobile Client Access services are also added to the app.
@@ -39,7 +39,7 @@ Open the appRoute URL in your browser. You will see the web interface for the he
 
 (Optionally you might want to hit the "View API Reference" button on web UI to see the API specs)
 
-### Configuring the front end in the helloTodo sample
+### Configure the front end in the helloTodo sample
 1. In a terminal, navigate to the `bms-samples-ios-hellotodo` directory where the project was cloned
 2. Navigate to the helloTodo folder
 3. If the CocoaPods client is not installed, install it using the following command: `sudo gem install cocoapods`
@@ -64,7 +64,7 @@ return YES;
 ```
 
 
-### Running the helloTodo sample application
+### Run the helloTodo sample application
 
 The helloTodo sample a single view application with a simple list of todo items. If you previously added data through your web application you will see the data automatically pulled into the application. You can create, add and modify items directly in the application. Note that the helloTodo sample applications uses Bluemix Mobile Services SDK which knows how to handle Mobile Client Access security. Therefore, unlike the web UI, you can also DELETE items from mobile app by swiping them. You can also mark items as completed by clicking to the left of the corresponding todo item. When you update an item in the mobile app it will automatically be updated in the web app (you will need to refresh the web UI). If you make a change in the web UI and want to see it reflected in the mobile app, simply pull down the todo list to refresh.
 
