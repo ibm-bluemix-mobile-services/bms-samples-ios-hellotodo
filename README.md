@@ -29,8 +29,8 @@ Before you can run the helloTodo application, you must set up an app on Bluemix.
 
 Create a mobile backend in the  Bluemix dashboard:
 
-1.	In the Boilerplates section of the Bluemix catalog, click MobileFirst Services Starter.
-2.	Enter a name and host for your mobile backend and click Create.
+1.	In the **Boilerplates** section of the Bluemix catalog, click **MobileFirst Services Starter**.
+2.	Enter a name and host for your mobile backend and click **Create**.
 3.	Click **Finish**.
 
 Once the above provisioning process is complete you'll be taken to a Bluemix Dashboard for your newly provisioned mobile backend. Click the **Mobile Options** link in top right part of a screen to find your **appRoute* and *appGUID*. Keep this screen open in your browser as you you will need these parameters shortly. 
