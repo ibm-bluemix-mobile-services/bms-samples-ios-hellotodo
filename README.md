@@ -1,9 +1,19 @@
 # iOS helloTodo Sample Application for Bluemix Mobile Services
 ---
-This helloTodo sample contains an Objective-C project to be used to communicate with a StrongLoop based mobile backend created using MobileFirst Services Boilerplate on IBM Bluemix. You can either watch the video tutorial or follow the below instructions that take you step by step through a process of creating a mobile backend and getting this sample running.
+This helloTodo sample app contains an Objective-C project that communicates with a StrongLoop-based mobile backend that was created with the MobileFirst Services Starter Boilerplate on IBM&reg; Bluemix&reg;.
 
+You can either watch the video tutorial or follow the instructions that take you step-by-step through the process of creating a mobile backend and running the sample.
+
+### Before you begin
+Before you start, make sure that you have:
+* A [Bluemix](http://bluemix.net) account
+* XCode Version 7.1
+
+### Video tutorial
 ![image](video-coming-soon.png)
-> We're working on creating a video tutorial. It will be published here once ready
+> We're working on creating a video tutorial. It will be published here when it's ready.
+
+### Configure the helloTodo sample
 
 Use the following steps to configure the helloTodo sample for Objective-C:
 
@@ -12,10 +22,6 @@ Use the following steps to configure the helloTodo sample for Objective-C:
 3. [Configure the front end in the helloTodo sample](#configure-the-front-end-in-the-hellotodo-sample)
 4. [Run the helloTodo sample application](#run-the-hellotodo-sample-application)
 
-### Before you begin
-Before you start, make sure you have the following:
-
-- A [Bluemix](http://bluemix.net) account.
 
 ### Download the helloTodo sample
 Clone the sample from Github with the following command:
@@ -23,39 +29,46 @@ Clone the sample from Github with the following command:
 ```git clone https://github.com/ibm-bluemix-mobile-services/bms-samples-ios-hellotodo```
 
 ### Configure the mobile backend for your helloTodo application
-> If you have already followed steps described in other tutorials and created a mobile backend using MobileFirst Services Boilerplate you might want to skip to the [Configuring the front end in the helloTodo sample](#configuring-the-front-end-in-the-hellotodo-sample) section.
 
-Before you can run the helloTodo application, you must set up an app on Bluemix.  The following procedure shows you how to create a MobileFirst Services Starter application. This will provision a Node.JS runtime and populate it with with a default helloTodo application created using StrongLoop. This application uses LoopBack framework to expose the `/api/Items` API which will be used by both Web UI and the helloTodo app sample from this Github repository. . The Cloudant®NoSQL DB, IBM Push Notifications, and Mobile Client Access services are also added to the app.
+Before you can run the helloTodo application, you must set up a mobile backend for your app on Bluemix.
 
-Create a mobile backend in the  Bluemix dashboard:
+> If you have already created a mobile backend with the MobileFirst Services Starter boilerplate, you might want to skip to the [Configuring the front end in the helloTodo sample](#configuring-the-front-end-in-the-hellotodo-sample) section.
+
+  The following procedure shows you how to create a MobileFirst Services Starter application. Using the boilerplate to create your app automatically performs the following actions:
+
+* Provisions a Node.js runtime and populates it with with a default helloTodo application that was created with StrongLoop. This application uses the LoopBack framework to expose the `/api/Items` API, which is used by both the Web UI and the helloTodo app sample from this Github repository.
+* Adds the following services to the app: Cloudant&reg; NoSQL DB, IBM Push Notifications, and Mobile Client Access.
+
+#### Create a mobile backend in the  Bluemix dashboard
 
 1.	In the **Boilerplates** section of the Bluemix catalog, click **MobileFirst Services Starter**.
 2.	Enter a name and host for your mobile backend and click **Create**.
 3.	Click **Finish**.
+4. Get information about your app. <br/> After the provisioning process is complete, you will see a a page for your newly provisioned mobile backend. Click the **Mobile Options** link in top right part of a screen to find your *appRoute* and *appGUID*. Keep this screen open in your browser; you will need these parameters in the next steps.
 
-Once the above provisioning process is complete you'll be taken to a Bluemix Dashboard for your newly provisioned mobile backend. Click the **Mobile Options** link in top right part of a screen to find your **appRoute* and *appGUID*. Keep this screen open in your browser as you you will need these parameters shortly. 
+#### Access the StrongLoop backend app
+1. Open the **appRoute** URL that you copied from the Bluemix dashboard in your browser. You will see the web interface for the helloTodo backend.
+2. Start by following the guided experience steps that are described in the web UI. <br/>Eventually, you will try to DELETE a todo item and will discover that this action can only be complete when using the helloTodo mobile apps sample from this Github repository.The mobile backend is protected by a Mobile Client Access by default.  Mobile Client Access is a Bluemix service that provides security and monitoring functionality for mobile backend applications.
 
-Open the appRoute URL in your browser. You will see the web interface for the helloTodo backend. Start by following the guided experience steps described in the web UI. Eventually you will try to DELETE a todo item and will discover that this action can only be complete when using the helloTodo mobile apps sample from this Github repository. This is due to a fact that the mobile backend is by default protected by a Mobile Client Access - a Bluemix service that provides security and monitoring functionality for mobile backends. Following steps will guide you through obtaining and running the helloTodo mobile application. 
+> **Tip:** Click the **View API Reference** button on web UI to see the API specs.
 
-(Optionally you might want to hit the "View API Reference" button on web UI to see the API specs)
+The following steps will guide you through obtaining and running the helloTodo mobile application.
 
 ### Configure the front end in the helloTodo sample
-1. In a terminal, navigate to the `bms-samples-ios-hellotodo` directory where the project was cloned
-2. Navigate to the helloTodo folder
-3. If the CocoaPods client is not installed, install it using the following command: `sudo gem install cocoapods`
-4. If the CocoaPods repository is not configured, configure it using the following command: `pod setup`
-5. Run the `pod install` command to download and install the required dependencies.
-6. Open the Xcode workspace: `open helloPush.xcworkspace`. From now on, open the xcworkspace file since it contains all the dependencies and configuration.
-7. Open the **AppDelegate.m** and add the corresponding **ApplicationRoute** and
-**ApplicationID** (found in the `Mobile Options` link on the Bluemix Dashboard) in the application **didFinishLaunchingWithOptions** method:
+1. In a terminal, navigate to the `bms-samples-ios-hellotodo` directory where the project was cloned.
+2. Navigate to the `helloTodo` folder.
+3. If the CocoaPods client is not installed, run the following command: `sudo gem install cocoapods`
+4. If the CocoaPods repository is not configured, run the following command: `pod setup`
+5. To download and install the required dependencies, run the following commmand: `pod install`
+6. Open the Xcode workspace: `open helloToDo.xcworkspace`. From now on, open the xcworkspace file because it contains all the dependencies and configuration.
+7. Open the `helloToDo/AppDelegate.m` file and add the corresponding **ApplicationRoute** and
+**ApplicationID** values (found in the **Mobile Options** link on the Bluemix Dashboard) in the application `didFinishLaunchingWithOptions` method:
 
-
-Objective C:
 ```objective-c
 (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
 //initialize SDK with IBM Bluemix application ID and route
-//TODO: Enter a valid ApplicationRoute for initializaWithBacken Route and a valid ApplicationId for backenGUID
+//TODO: Enter a valid ApplicationRoute for initializaWithBackend Route and a valid ApplicationId for backendGUID
 IMFClient *imfClient = [IMFClient sharedInstance];
 [imfClient initializeWithBackendRoute:@"<APPLICATION_ROUTE>" backendGUID:@"<APPLICATION_ID>"];			
 
@@ -66,15 +79,23 @@ return YES;
 
 ### Run the helloTodo sample application
 
-The helloTodo sample a single view application with a simple list of todo items. If you previously added data through your web application you will see the data automatically pulled into the application. You can create, add and modify items directly in the application. Note that the helloTodo sample applications uses Bluemix Mobile Services SDK which knows how to handle Mobile Client Access security. Therefore, unlike the web UI, you can also DELETE items from mobile app by swiping them. You can also mark items as completed by clicking to the left of the corresponding todo item. When you update an item in the mobile app it will automatically be updated in the web app (you will need to refresh the web UI). If you make a change in the web UI and want to see it reflected in the mobile app, simply pull down the todo list to refresh.
+In Xcode, click **Product > Run**.  
 
-As you recall the DELETE endpoint can only be accessed by mobile applications since it is protected by a Mobile Client Access service. That said, by default Mobile Client Access is not configured to require any interactive authentication (e.g. ask for username and password). Next step is learning how to configure authentication using the Mobile Client Access dashboard and instrument your app with required components. You can either check [Mobile Client Documentation](https://www.ng.bluemix.net/docs/services/mobileaccess/index.html) for that or watch the below video showing the process in details. 
+The helloTodo sample is a single view application with a simple list of to do items. If you previously added data through your web application, you will see the data is automatically pulled into the application.
 
-![image](video-coming-soon.png)
-> We're working on creating a video tutorial. It will be published here once ready
+#### Modify to do items in the iOS app
+You can create, add and modify items directly in the application. This sample uses Bluemix Mobile Services SDK, which knows how to handle Mobile Client Access security. Therefore, unlike the web application, you can also DELETE items from mobile app by swiping them. You can also mark items as completed by clicking to the left of the corresponding to do item. When you update an item in the mobile app it will automatically be updated in the web app (you need to refresh the web app). If you make a change in the web UI and want to see it reflected in the mobile app, pull down the todo list to refresh.
+
+### Add authentication to your app
+As you recall, the DELETE endpoint can only be accessed by mobile applications because it is protected by the Mobile Client Access service.
+
+By default, Mobile Client Access is not configured to require any interactive authentication (for example, to ask for username and password).
+
+The next step is to learn how to configure authentication with the Mobile Client Access dashboard and instrument your app with required components. For more information, see the  [Mobile Client Access documentation](https://www.ng.bluemix.net/docs/services/mobileaccess/index.html) and [HelloAuthentication sample](https://github.com/ibm-bluemix-mobile-services/bms-samples-ios-helloauthentication).
 
 
-**Note:** This helloTodo iOS sample requires XCode 7.1 to run. Also, the project has bitcode support disabled since currently the Bluemix Mobile Services SDK does not support it. You can read more about this in this blog entry: [Connect Your iOS 9 App to Bluemix](https://developer.ibm.com/bluemix/2015/09/16/connect-your-ios-9-app-to-bluemix/)
+### Xcode requirement
+**Note:** The project has bitcode support disabled because the Bluemix Mobile Services SDK does not currently support bitcode. For more information, see: [Connect Your iOS 9 App to Bluemix](https://developer.ibm.com/bluemix/2015/09/16/connect-your-ios-9-app-to-bluemix/)
 
 ### License
 This package contains sample code provided in source code form. The samples are licensed under the under the Apache License, Version 2.0 (the "License"). You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and may also view the license in the license.txt file within this package. Also see the notices.txt file within this package for additional notices.
