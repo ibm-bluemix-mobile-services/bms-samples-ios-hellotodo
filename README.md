@@ -91,7 +91,7 @@ As you recall, the DELETE endpoint can only be accessed by mobile applications b
 
 By default, Mobile Client Access is not configured to require any interactive authentication (for example, to ask for username and password).
 
-The next step is to learn how to configure authentication with the Mobile Client Access dashboard and instrument your app with required components. For more information, see the  [Mobile Client Access documentation](https://www.ng.bluemix.net/docs/services/mobileaccess/index.html) and [HelloAuthentication sample](https://github.com/ibm-bluemix-mobile-services/bms-samples-ios-helloauthentication).
+The next step is to learn how to configure authentication with the Mobile Client Access dashboard and instrument your app with required components. For more information, see the  [Mobile Client Access documentation](https://www.bluemix.net/docs/services/mobileaccess/index.html) and [HelloAuthentication sample](https://github.com/ibm-bluemix-mobile-services/bms-samples-ios-helloauthentication).
 
 
 ### Xcode requirement
