@@ -1,5 +1,11 @@
 # iOS helloTodo Sample Application for Bluemix Mobile Services
 ---
+
+> **ATTENTION:** This sample has been deprecated and is no longer supported. Please visit [Bluemix Mobile](https://console.ng.bluemix.net/mobile/create-project/) and choose a starter project to add Push, Analytics, and Authentication capabilities to download a working project.
+
+
+
+
 This helloTodo sample app contains an Objective-C project that communicates with a StrongLoop-based mobile backend that was created with the MobileFirst Services Starter Boilerplate on IBM&reg; Bluemix&reg;.
 
 You can either watch the video tutorial or follow the instructions that take you step-by-step through the process of creating a mobile backend and running the sample.
@@ -8,10 +14,6 @@ You can either watch the video tutorial or follow the instructions that take you
 Before you start, make sure that you have:
 * A [Bluemix](http://bluemix.net) account
 * XCode Version 7.1
-
-### Video tutorial
-![image](video-coming-soon.png)
-> We're working on creating a video tutorial. It will be published here when it's ready.
 
 ### Configure the helloTodo sample
 
