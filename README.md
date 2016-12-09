@@ -1,7 +1,7 @@
 # iOS helloTodo Sample Application for Bluemix Mobile Services
 ---
 
-> **ATTENTION:** This sample has been deprecated and is no longer supported. Please visit [Bluemix Mobile](https://console.ng.bluemix.net/mobile/create-project/) and choose a starter project to add Push, Analytics, and Authentication capabilities to download a working project.
+> **ATTENTION:** This sample has been deprecated and is no longer supported. Please visit [Bluemix Mobile](https://console.ng.bluemix.net/mobile/create-project/) and choose a starter to add Push, Analytics, and Authentication capabilities to download and start coding with a working project.
 
 
 
